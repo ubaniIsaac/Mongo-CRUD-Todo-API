@@ -1,4 +1,4 @@
-const todosModel = require('../models/Todos.model')
+const todosModel = require('../models/todos.model')
 
 exports.addTodo = async (req, res) => {
     try {
