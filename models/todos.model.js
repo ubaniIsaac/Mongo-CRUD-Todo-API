@@ -67,8 +67,6 @@ todosSchema.statics.deleteTodoById = async function (id) {
 todosSchema.statics.updateTodo = async function (id, title,
     description,) {
     try {
-        // const todoExists = await this.findOne({ _id: id })
-        // if (!todoExists) throw ({ error: 'No todo with this id found' })
         const todo = await this.updateOne({ _id: id }, { title, description })
         return todo
     } catch (error) {
