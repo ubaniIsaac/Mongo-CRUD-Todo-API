@@ -1,11 +1,9 @@
-const http = require('http')
 const express = require('express')
 
 require('./config/mongo')
+require('dotenv').config()
 
 const todosRouter = require('./routes/todo.route')
-
-
 const app = express();
 
 const PORT = process.env.PORT || 3000;
@@ -24,9 +22,6 @@ app.use('*', (req, res) => {
     })
 });
 
-const server = http.createServer(app);
-
-server.listen(PORT);
-server.on("listening", () => {
+app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}...`)
 });

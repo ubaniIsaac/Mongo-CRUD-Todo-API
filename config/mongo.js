@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
-const config = require('./db.config')
+require('dotenv').config()
 
-const CONNECTION_URL = `mongodb://${config.db.url}/${config.db.name}`
 
-mongoose.connect(CONNECTION_URL, {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
